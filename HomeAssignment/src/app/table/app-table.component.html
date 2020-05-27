@@ -1,0 +1,33 @@
+<table class='table table-striped'>
+    <thead>
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            <select #select (input)='filter = select.value'>
+                <option id="all">All</option>
+                <option id="cat1">Category 1</option>
+                <option id="cat2">Category 2</option>
+                <option id="cat3">Category 3</option>
+            </select>
+        </th>
+        <th>
+            Price
+        </th>
+        <th></th>
+    </thead>
+    <tr class="ng-row" 
+        *ngFor="let row of table" 
+        [style.color]="getStyle(row.price)"
+        [id]='row.id' 
+        [product]='{ name: row.name, category: row.category, price: row.price }' 
+        (deletionEvent)='deleteRow(row.id)'>
+
+    </tr>
+</table>
+<app-row-input (addingEvent)='addRow($event)'>
+    
+</app-row-input>

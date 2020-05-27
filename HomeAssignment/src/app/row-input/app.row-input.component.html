@@ -1,0 +1,8 @@
+<input #inputName type="text" [(ngModel)]='product.name' required value="Some Product" />
+    <select [(ngModel)]='product.category'>
+        <option>Category 1</option>
+        <option>Category 2</option>
+        <option>Category 3</option>
+    </select>
+<input type="number" required [(ngModel)]='product.price' value="0" />
+<button (click)='add()'>Add product</button>
