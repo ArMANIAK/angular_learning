@@ -21,9 +21,9 @@
     </thead>
     <tr class="ng-row" 
         *ngFor="let row of table" 
-        [style.color]="getStyle(row.price)"
+        [style.color]="getStyle(row.product.price)"
         [id]='row.id' 
-        [product]='{ name: row.name, category: row.category, price: row.price }' 
+        [product]='{ name: row.product.name, category: row.product.category, price: row.product.price }' 
         (deletionEvent)='deleteRow(row.id)'>
 
     </tr>

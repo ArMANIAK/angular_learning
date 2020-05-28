@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './table/app-table.component';
 import { RowComponent } from './row/app-row.component';
 import { RowInput } from './row-input/app.row-input.component';
-import { Product } from './row/product';
+import { DataProvider } from './data-provider/data-provider.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { Product } from './row/product';
     FormsModule,
     BrowserModule,
   ],
-  providers: [],
+  providers: [DataProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

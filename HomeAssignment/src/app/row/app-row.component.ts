@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Product } from '../row/product'
+import { Product } from '../product/product'
 
 @Component({
     selector: 'tr.ng-row',
