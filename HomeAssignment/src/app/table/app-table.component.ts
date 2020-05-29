@@ -5,7 +5,7 @@ import { Product } from '../product/product'
 @Component({
     selector: 'app-table',
     templateUrl: './app-table.component.html',
-    styleUrls: ['../../../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css'],
+    styles: ['../../../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css'],
     inputs: ['rows']
 })
 export class TableComponent {
