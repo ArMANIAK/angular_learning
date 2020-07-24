@@ -1,0 +1,15 @@
+h1 {
+    text-align: center;
+}
+
+nav {
+    background-color: cadetblue;
+    padding: 15px;
+}
+
+nav > a {
+    text-decoration: none;
+    font-size: large;
+    color: white;
+    margin-right: 15px;
+}

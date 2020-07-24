@@ -1,0 +1,8 @@
+<ul>
+    <li *ngFor='let product of productList'>
+        {{ product.name }}
+        <a routerLink="{{product.id}}" (click)='getDetails(product)'>Details</a>
+    </li>
+</ul>
+
+<router-outlet></router-outlet>

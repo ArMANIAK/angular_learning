@@ -1,0 +1,38 @@
+<form (ngSubmit)="add()" #productAddingForm='ngForm'>
+    <label>Product: 
+        <input type="text" id="name"
+            name="name"
+            #name='ngModel'
+            required
+            minlength="4"
+            [(ngModel)]="product.name" />
+    </label>
+    <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
+        <div [hidden]="!name.errors.required">
+            Field 'Product name' is required
+        </div>
+        <div [hidden]="!name.errors.minlength">
+            Minimum 4 symbols for this field
+        </div>
+    </div>
+    <label>Category: 
+        <select id="category"
+            #category='ngModel'
+            name="category"
+            required
+            [(ngModel)]="product.category">
+            <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+        </select>
+    </label>
+    <label>Price: 
+        <input type="number" id="price"
+            #price='ngModel'
+            name="price"
+            required
+            [(ngModel)]="product.price" />
+    </label>
+    <div [hidden]="price.valid || price.pristine" class="alert alert-danger">
+        Field 'Price' is required
+    </div>
+    <input type="submit" [disabled]="!productAddingForm.form.valid" value="Submit TDF" />
+</form>

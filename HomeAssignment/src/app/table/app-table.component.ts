@@ -1,4 +1,6 @@
 import { NgModule, Component } from '@angular/core';
+import { TdfInputComponent } from '../tdf-input/tdf-input.component';
+import { MdfComponentComponent } from '../mdf-component/mdf-component.component';
 import { DataProvider } from '../data-provider/data-provider.service';
 import { Product } from '../product/product'
 

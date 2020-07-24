@@ -1,0 +1,24 @@
+a {
+    border-radius: 3px;
+    text-decoration: none;
+    background-color: cadetblue;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 15px;
+}
+
+li {
+    margin: 15px 0px;
+}
+
+ul {
+    float: left;
+}
+
+router-output {
+    min-height: 1px;
+}
+
+.card {
+    margin-right: 50px;
+}

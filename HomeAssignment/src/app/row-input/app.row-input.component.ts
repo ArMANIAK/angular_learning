@@ -16,6 +16,7 @@ export class RowInput {
     addingEvent = new EventEmitter<Product>();
 
     add() {
+        // duplicating object to avoid passing referrence into ngModel
         this.addingEvent.emit({ name: this.product.name, category: this.product.category, price: this.product.price });
         this.product.name = 'You may add another product';
         this.product.price = 0;

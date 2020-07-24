@@ -1,0 +1,42 @@
+<form novalidate [formGroup]="productAddingForm" (ngSubmit)="submitMDF(productAddingForm)">
+        
+    <label>Product name: 
+        <input type="text" 
+            id="nameMDF"
+            required
+            formControlName="nameMDF" />
+    </label>
+    <div *ngIf="productAddingForm.get('nameMDF').hasError('required') && 
+            productAddingForm.get('nameMDF').touched" 
+        class="alert alert-danger">
+        This field is required
+    </div>
+    <div *ngIf="productAddingForm.get('nameMDF').hasError('minlength') && 
+                productAddingForm.get('nameMDF').touched" 
+        class="alert alert-danger">
+    This filed should be not less than 4 symbols.
+    </div>
+
+    <label>Category: 
+        <select id="categoryMDF"
+            name="categoryMDF"
+            formControlName='categoryMDF'
+            required>
+            <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+        </select>
+    </label>
+
+    <label>Price: 
+        <input type="priceMDF"
+            id="priceMDF"
+            required
+            formControlName="priceMDF">
+    </label>
+    <div *ngIf="productAddingForm.get('priceMDF').hasError('required') && 
+                productAddingForm.get('priceMDF').touched" 
+        class="alert alert-danger">
+        This field is required
+    </div>
+
+    <input type="submit" [disabled]="productAddingForm.invalid" value="Add product" /> 
+</form>
